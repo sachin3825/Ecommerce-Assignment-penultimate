@@ -15,12 +15,9 @@ const Card = ({ product }) => {
 
   const handleBuyNow = async (product) => {
     try {
-      const response = await axios.post(
-        "https://ecommerce-assignment-penultimate.vercel.app/addProduct",
-        {
-          name: product.title,
-        }
-      );
+      const response = await axios.post("http://localhost:8080/addProduct", {
+        name: product.title,
+      });
       console.log(response);
       toast.success("Item added to the DB");
     } catch (error) {
