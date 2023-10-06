@@ -16,9 +16,12 @@ const ShoppingCart = () => {
     const cartData = cart.map((item) => ({ name: item.title }));
 
     try {
-      const response = await axios.post("http://localhost:8080/buyAll", {
-        cart: cartData,
-      });
+      const response = await axios.post(
+        "https://ecommerce-assignment-penultimate.vercel.app/buyAll",
+        {
+          cart: cartData,
+        }
+      );
       console.log("Buy All button clicked");
       if (response.status === 200) {
         dispatch(clearCart());
